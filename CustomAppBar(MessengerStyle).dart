@@ -29,10 +29,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Row(
               children: [
                 Container(
-                  child: CircleAvatar(
-                      backgroundColor:
-                          const Color(0xff000000).withOpacity(0.04),
-                      child: titleWidget ?? Text(title!)),
+                  child: titleWidget == null
+                      ? Container()
+                      : CircleAvatar(
+                          backgroundColor:
+                              const Color(0xff000000).withOpacity(0.04),
+                          child: titleWidget ?? Text(title!)),
                 ),
                 const SizedBox(
                   width: 12,
@@ -51,10 +53,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             child: Row(
               children: [
                 Container(
-                  child: CircleAvatar(
-                      backgroundColor:
-                          const Color(0xff000000).withOpacity(0.04),
-                      child: suffixWidget1),
+                  child: suffixWidget1 == null
+                      ? Container()
+                      : CircleAvatar(
+                          backgroundColor:
+                              const Color(0xff000000).withOpacity(0.04),
+                          child: suffixWidget1),
                 ),
                 const SizedBox(
                   width: 12,
